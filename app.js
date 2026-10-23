@@ -3,6 +3,11 @@
  * İstemci Tarafı Dinamik Etkileşimler & WhatsApp Yönlendirici
  */
 
+// Başka bir sitenin çerçevesi (iframe) içinde açılmayı engelle (clickjacking koruması)
+if (window.top !== window.self) {
+  window.top.location = window.self.location.href;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initFaqAccordion();
