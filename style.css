@@ -4148,15 +4148,3 @@ img {
   background: rgba(11, 66, 145, 0.05);
 }
 
-/* KVKK sayfası: doldurulması gereken taslak alanlar */
-.kvkk-fill {
-  background: #FEF3C7;
-  color: #92400E;
-  padding: 0 4px;
-  border-radius: 4px;
-}
-
-.kvkk-draft-note {
-  border-left-color: #F59E0B;
-  background: #FFFBEB;
-}
