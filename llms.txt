@@ -10,48 +10,48 @@
 - Telefon: +90 462 323 35 92
 - WhatsApp: +90 532 775 52 78
 - Çalışma saatleri: Pazartesi - Cumartesi, 09:00 - 19:00
-- Web: https://emreatasoy.com/
+- Web: https://zafersari61.github.io/emreatasoysite-/
 
 ## Ana Sayfalar
 
-- [Ana Sayfa](https://emreatasoy.com/): Klinik tanıtımı, tedaviler, hasta yorumları ve sık sorulan sorular
-- [Hekimimiz](https://emreatasoy.com/hekimimiz.html): Dt. Emre Atasoy'un mesleki yaklaşımı, sterilizasyon standartları ve kullanılan teknoloji
-- [İletişim](https://emreatasoy.com/iletisim.html): Adres, telefon, WhatsApp ve harita
-- [Ulaşım Rehberi](https://emreatasoy.com/lokasyonlar/trabzon-dis-klinigi-ulasim.html): Trabzon'un ilçelerinden kliniğe ulaşım
-- [Tüm Tedaviler](https://emreatasoy.com/tedaviler/index.html): Tedavi hizmetlerinin listesi
+- [Ana Sayfa](https://zafersari61.github.io/emreatasoysite-/): Klinik tanıtımı, tedaviler, hasta yorumları ve sık sorulan sorular
+- [Hekimimiz](https://zafersari61.github.io/emreatasoysite-/hekimimiz.html): Dt. Emre Atasoy'un mesleki yaklaşımı, sterilizasyon standartları ve kullanılan teknoloji
+- [İletişim](https://zafersari61.github.io/emreatasoysite-/iletisim.html): Adres, telefon, WhatsApp ve harita
+- [Ulaşım Rehberi](https://zafersari61.github.io/emreatasoysite-/lokasyonlar/trabzon-dis-klinigi-ulasim.html): Trabzon'un ilçelerinden kliniğe ulaşım
+- [Tüm Tedaviler](https://zafersari61.github.io/emreatasoysite-/tedaviler/index.html): Tedavi hizmetlerinin listesi
 
 ## Tedaviler
 
-- [İmplant Tedavisi](https://emreatasoy.com/tedaviler/trabzon-implant.html): Eksik dişler için titanyum implant uygulaması
-- [Zirkonyum Kaplama](https://emreatasoy.com/tedaviler/trabzon-zirkonyum-kaplama.html): Metal desteksiz, doğal görünümlü diş kaplama
-- [Porselen Kaplama](https://emreatasoy.com/tedaviler/trabzon-porselen-kaplama.html): Metal destekli porselen kron
-- [Lamine Diş](https://emreatasoy.com/tedaviler/trabzon-lamine-dis.html): Minimum aşındırmalı yaprak porselen (lamina veneer)
-- [Gülüş Tasarımı](https://emreatasoy.com/tedaviler/trabzon-gulus-tasarimi.html): Yüz hatlarına göre planlanan estetik tedavi
-- [Kanal Tedavisi](https://emreatasoy.com/tedaviler/trabzon-kanal-tedavisi.html): Enfekte dişin çekilmeden kurtarılması (endodonti)
-- [20'lik Diş Çekimi](https://emreatasoy.com/tedaviler/trabzon-20lik-dis-cekimi.html): Gömülü ve yarı gömülü 20 yaş dişi çekimi
-- [Diş Çekimi](https://emreatasoy.com/tedaviler/trabzon-dis-cekimi.html): Doku koruyucu atravmatik çekim
-- [Diş Dolgusu](https://emreatasoy.com/tedaviler/trabzon-dis-dolgusu.html): Estetik kompozit dolgu ve bonding
-- [Diş Teli](https://emreatasoy.com/tedaviler/trabzon-dis-teli.html): Metal ve şeffaf braket ile ortodonti
-- [Şeffaf Plak](https://emreatasoy.com/tedaviler/trabzon-seffaf-plak.html): Telsiz ortodonti
-- [Diş Beyazlatma](https://emreatasoy.com/tedaviler/trabzon-dis-beyazlatma.html): Klinik tipi (ofis) beyazlatma
-- [Diş Eti Tedavisi](https://emreatasoy.com/tedaviler/trabzon-dis-eti-tedavisi.html): Diş taşı temizliği, küretaj ve diş eti çekilmesi tedavisi
-- [Protez Diş](https://emreatasoy.com/tedaviler/trabzon-protez-dis.html): Sabit ve hareketli protezler
-- [Çocuk Diş Hekimliği](https://emreatasoy.com/tedaviler/trabzon-cocuk-dis-hekimi.html): Süt dişi tedavileri ve koruyucu uygulamalar
+- [İmplant Tedavisi](https://zafersari61.github.io/emreatasoysite-/tedaviler/trabzon-implant.html): Eksik dişler için titanyum implant uygulaması
+- [Zirkonyum Kaplama](https://zafersari61.github.io/emreatasoysite-/tedaviler/trabzon-zirkonyum-kaplama.html): Metal desteksiz, doğal görünümlü diş kaplama
+- [Porselen Kaplama](https://zafersari61.github.io/emreatasoysite-/tedaviler/trabzon-porselen-kaplama.html): Metal destekli porselen kron
+- [Lamine Diş](https://zafersari61.github.io/emreatasoysite-/tedaviler/trabzon-lamine-dis.html): Minimum aşındırmalı yaprak porselen (lamina veneer)
+- [Gülüş Tasarımı](https://zafersari61.github.io/emreatasoysite-/tedaviler/trabzon-gulus-tasarimi.html): Yüz hatlarına göre planlanan estetik tedavi
+- [Kanal Tedavisi](https://zafersari61.github.io/emreatasoysite-/tedaviler/trabzon-kanal-tedavisi.html): Enfekte dişin çekilmeden kurtarılması (endodonti)
+- [20'lik Diş Çekimi](https://zafersari61.github.io/emreatasoysite-/tedaviler/trabzon-20lik-dis-cekimi.html): Gömülü ve yarı gömülü 20 yaş dişi çekimi
+- [Diş Çekimi](https://zafersari61.github.io/emreatasoysite-/tedaviler/trabzon-dis-cekimi.html): Doku koruyucu atravmatik çekim
+- [Diş Dolgusu](https://zafersari61.github.io/emreatasoysite-/tedaviler/trabzon-dis-dolgusu.html): Estetik kompozit dolgu ve bonding
+- [Diş Teli](https://zafersari61.github.io/emreatasoysite-/tedaviler/trabzon-dis-teli.html): Metal ve şeffaf braket ile ortodonti
+- [Şeffaf Plak](https://zafersari61.github.io/emreatasoysite-/tedaviler/trabzon-seffaf-plak.html): Telsiz ortodonti
+- [Diş Beyazlatma](https://zafersari61.github.io/emreatasoysite-/tedaviler/trabzon-dis-beyazlatma.html): Klinik tipi (ofis) beyazlatma
+- [Diş Eti Tedavisi](https://zafersari61.github.io/emreatasoysite-/tedaviler/trabzon-dis-eti-tedavisi.html): Diş taşı temizliği, küretaj ve diş eti çekilmesi tedavisi
+- [Protez Diş](https://zafersari61.github.io/emreatasoysite-/tedaviler/trabzon-protez-dis.html): Sabit ve hareketli protezler
+- [Çocuk Diş Hekimliği](https://zafersari61.github.io/emreatasoysite-/tedaviler/trabzon-cocuk-dis-hekimi.html): Süt dişi tedavileri ve koruyucu uygulamalar
 
 ## Sağlık Rehberi (Blog)
 
-- [20'lik Diş Ne Zaman Çekilmeli?](https://emreatasoy.com/blog/20lik-dis-ne-zaman-cekilmeli.html)
-- [Diş Ağrısına Ne İyi Gelir? Kırılan Dişe Ne Yapılır?](https://emreatasoy.com/blog/dis-agrisina-ne-iyi-gelir-kirik-dis.html)
-- [Diş Beyazlatma Nasıl Yapılır? Kalıcı mıdır?](https://emreatasoy.com/blog/dis-beyazlatma-nasil-yapilir.html)
-- [Diş Eti Çekilmesi Neden Olur?](https://emreatasoy.com/blog/dis-eti-cekilmesi-neden-olur.html)
-- [Diş Taşı Neden Oluşur ve Nasıl Temizlenir?](https://emreatasoy.com/blog/dis-tasi-neden-olusur-temizligi.html)
-- [Gülüş Tasarımı Kimlere Yapılır?](https://emreatasoy.com/blog/gulus-tasarimi-kimlere-yapilir.html)
-- [İmplant Nedir, Ne Kadar Dayanır?](https://emreatasoy.com/blog/implant-nedir-ne-kadar-dayanir.html)
-- [Kanal Tedavisi Ne Kadar Sürer? Ağrılı mıdır?](https://emreatasoy.com/blog/kanal-tedavisi-ne-kadar-surer-agrili-mi.html)
-- [Şeffaf Plak mı Diş Teli mi?](https://emreatasoy.com/blog/seffaf-plak-mi-dis-teli-mi.html)
-- [Zirkonyum mu Porselen mi?](https://emreatasoy.com/blog/zirkonyum-mu-porselen-mi.html)
+- [20'lik Diş Ne Zaman Çekilmeli?](https://zafersari61.github.io/emreatasoysite-/blog/20lik-dis-ne-zaman-cekilmeli.html)
+- [Diş Ağrısına Ne İyi Gelir? Kırılan Dişe Ne Yapılır?](https://zafersari61.github.io/emreatasoysite-/blog/dis-agrisina-ne-iyi-gelir-kirik-dis.html)
+- [Diş Beyazlatma Nasıl Yapılır? Kalıcı mıdır?](https://zafersari61.github.io/emreatasoysite-/blog/dis-beyazlatma-nasil-yapilir.html)
+- [Diş Eti Çekilmesi Neden Olur?](https://zafersari61.github.io/emreatasoysite-/blog/dis-eti-cekilmesi-neden-olur.html)
+- [Diş Taşı Neden Oluşur ve Nasıl Temizlenir?](https://zafersari61.github.io/emreatasoysite-/blog/dis-tasi-neden-olusur-temizligi.html)
+- [Gülüş Tasarımı Kimlere Yapılır?](https://zafersari61.github.io/emreatasoysite-/blog/gulus-tasarimi-kimlere-yapilir.html)
+- [İmplant Nedir, Ne Kadar Dayanır?](https://zafersari61.github.io/emreatasoysite-/blog/implant-nedir-ne-kadar-dayanir.html)
+- [Kanal Tedavisi Ne Kadar Sürer? Ağrılı mıdır?](https://zafersari61.github.io/emreatasoysite-/blog/kanal-tedavisi-ne-kadar-surer-agrili-mi.html)
+- [Şeffaf Plak mı Diş Teli mi?](https://zafersari61.github.io/emreatasoysite-/blog/seffaf-plak-mi-dis-teli-mi.html)
+- [Zirkonyum mu Porselen mi?](https://zafersari61.github.io/emreatasoysite-/blog/zirkonyum-mu-porselen-mi.html)
 
 ## Optional
 
-- [KVKK ve Gizlilik](https://emreatasoy.com/kvkk.html)
-- [Site Haritası](https://emreatasoy.com/sitemap.xml)
+- [KVKK ve Gizlilik](https://zafersari61.github.io/emreatasoysite-/kvkk.html)
+- [Site Haritası](https://zafersari61.github.io/emreatasoysite-/sitemap.xml)
