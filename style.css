@@ -270,6 +270,7 @@ img {
 }
 
 .nav-link {
+  white-space: nowrap;
   font-weight: 600;
   font-size: 0.95rem;
   color: var(--text-body);
@@ -1948,6 +1949,171 @@ img {
 /* ==========================================================================
    Responsive Düzen (Media Queries)
    ========================================================================== */
+/* Tablet (769-1100px): tam menü sığmadığı için çekmece menüye geç */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .top-bar {
+    display: none;
+  }
+
+  /* Sabit Navbar & Mobil Çekmece Menü */
+  .navbar {
+    height: 64px;
+  }
+
+  .brand-logo {
+    gap: 8px;
+  }
+
+  .brand-logo-img {
+    height: 38px;
+    max-width: 170px;
+  }
+
+  .header-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-whatsapp-nav {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center;
+    display: inline-flex !important;
+    flex-shrink: 0;
+  }
+
+  .btn-whatsapp-nav span {
+    display: none !important;
+  }
+
+  .btn-whatsapp-nav svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .btn-phone-nav {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center;
+    display: inline-flex !important;
+    flex-shrink: 0;
+  }
+
+  .btn-phone-nav span {
+    display: none !important;
+  }
+
+  .btn-phone-nav svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    flex-shrink: 0;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    flex-direction: column;
+    padding: 16px 18px 24px;
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 998;
+    gap: 0;
+    display: none;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 13px 6px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #F1F5F9;
+    min-height: 46px;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-link.active {
+    color: var(--primary);
+    font-weight: 700;
+    background: rgba(11, 66, 145, 0.04);
+    border-radius: 8px;
+    padding-left: 10px;
+  }
+
+  .nav-lang-container {
+    display: block !important;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border-light);
+  }
+
+  .nav-lang-title {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #64748B;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .nav-lang-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .nav-lang-btn {
+    height: 42px;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid var(--border-light);
+    background: #F8FAFC;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .nav-lang-btn.active {
+    background: var(--primary);
+    color: #FFFFFF;
+    border-color: var(--primary);
+    box-shadow: 0 3px 10px rgba(11, 66, 145, 0.22);
+  }
+}
+
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -2190,43 +2356,6 @@ img {
     font-size: 0.74rem;
   }
 
-  /* Diş Restorasyonu / Apple-Style Scroll Alanı */
-  .tooth-scroll-track {
-    height: auto;
-  }
-
-  .tooth-scroll-sticky {
-    position: relative;
-    height: auto;
-    padding: 36px 0;
-  }
-
-  .tooth-scroll-heading {
-    font-size: 1.6rem;
-  }
-
-  .tooth-scroll-subheading {
-    font-size: 0.88rem;
-  }
-
-  .tooth-scroll-body {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .step-card-active {
-    padding: 22px 18px;
-    border-radius: 16px;
-  }
-
-  .steps-buttons-grid {
-    gap: 6px;
-  }
-
-  .btn-step-item {
-    padding: 7px 3px;
-  }
-
   /* Tedavi & Blog Gridleri */
   .treatments-grid,
   .home-treatments-grid,
@@ -2455,22 +2584,6 @@ img {
   .reviews-filter-bar {
     padding: 4px 14px 10px;
     margin: 0 -14px 16px;
-  }
-
-  .steps-buttons-grid {
-    gap: 4px;
-  }
-
-  .btn-step-item {
-    padding: 6px 1px;
-  }
-
-  .step-btn-num {
-    font-size: 0.74rem;
-  }
-
-  .step-btn-txt {
-    font-size: 0.58rem;
   }
 
   .rating-huge-number {
@@ -3268,347 +3381,6 @@ img {
 }
 
 /* ==========================================================================
-   Apple-Style Scroll-Driven Diş Anatomisi & Restorasyon Animasyonu
-   ========================================================================== */
-.tooth-scroll-track {
-  position: relative;
-  height: 320vh;
-  background: #F8FAFC;
-}
-
-.tooth-scroll-sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: radial-gradient(circle at 50% 50%, #FFFFFF 0%, #F1F5F9 100%);
-  border-top: 1px solid var(--border-light);
-  border-bottom: 1px solid var(--border-light);
-}
-
-.tooth-scroll-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 24px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.tooth-scroll-header {
-  text-align: center;
-  max-width: 760px;
-  margin: 0 auto 20px;
-}
-
-.tooth-scroll-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(11, 66, 145, 0.08);
-  color: var(--primary);
-  font-size: 0.76rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 5px 14px;
-  border-radius: var(--radius-full);
-  margin-bottom: 8px;
-  border: 1px solid rgba(11, 66, 145, 0.15);
-}
-
-.tooth-tag-pulse {
-  width: 7px;
-  height: 7px;
-  background: var(--primary);
-  border-radius: 50%;
-  animation: pulseDot 2s infinite;
-}
-
-.tooth-scroll-heading {
-  font-size: 2.1rem;
-  font-weight: 800;
-  color: var(--text-dark);
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-  margin-bottom: 6px;
-}
-
-.tooth-scroll-heading .highlight {
-  color: var(--primary);
-}
-
-.tooth-scroll-subheading {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-  margin: 0;
-}
-
-.tooth-scroll-body {
-  display: grid;
-  grid-template-columns: 1.2fr 0.9fr;
-  gap: 32px;
-  align-items: center;
-}
-
-.tooth-canvas-wrap {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #FFFFFF;
-  box-shadow: 0 16px 40px rgba(11, 66, 145, 0.08);
-  border: 1px solid var(--border-light);
-  aspect-ratio: 16/9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#toothCanvas {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.canvas-glass-badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  background: rgba(11, 25, 44, 0.85);
-  backdrop-filter: blur(8px);
-  color: #FFFFFF;
-  font-size: 0.78rem;
-  font-weight: 700;
-  padding: 5px 12px;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  z-index: 5;
-}
-
-.badge-live-dot {
-  width: 7px;
-  height: 7px;
-  background: #38BDF8;
-  border-radius: 50%;
-  box-shadow: 0 0 8px #38BDF8;
-}
-
-.canvas-frame-counter {
-  position: absolute;
-  bottom: 12px;
-  right: 14px;
-  background: rgba(255, 255, 255, 0.92);
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #475569;
-  padding: 3px 8px;
-  border-radius: 6px;
-  border: 1px solid #CBD5E1;
-  z-index: 5;
-}
-
-.tooth-step-panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.step-card-active {
-  background: #FFFFFF;
-  border-radius: 20px;
-  padding: 32px 28px;
-  border: 1px solid var(--border-light);
-  box-shadow: 0 12px 32px rgba(11, 66, 145, 0.06);
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.2s ease;
-}
-
-.step-card-active::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 100%;
-  background: var(--primary);
-}
-
-.step-card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.step-number-pill {
-  font-size: 0.74rem;
-  font-weight: 800;
-  color: var(--primary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background: #EFF6FF;
-  padding: 4px 8px;
-  border-radius: 6px;
-}
-
-.step-percentage-pill {
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: #059669;
-  background: #ECFDF5;
-  padding: 4px 8px;
-  border-radius: 6px;
-}
-
-.step-card-title {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--text-dark);
-  margin-bottom: 8px;
-  line-height: 1.35;
-}
-
-.step-card-desc {
-  font-size: 0.90rem;
-  color: var(--text-body);
-  line-height: 1.6;
-  margin-bottom: 14px;
-}
-
-.step-card-meta {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  padding-top: 12px;
-  border-top: 1px solid #F1F5F9;
-  font-size: 0.82rem;
-}
-
-.meta-label {
-  display: block;
-  color: var(--text-muted);
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 2px;
-}
-
-.meta-value {
-  font-weight: 700;
-  color: var(--primary);
-}
-
-.steps-buttons-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
-  margin-top: 6px;
-}
-
-.btn-step-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  padding: 7px 4px;
-  background: #FFFFFF;
-  border: 1.5px solid #CBD5E1;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.btn-step-item:hover {
-  border-color: var(--primary);
-  background: #F8FAFC;
-}
-
-.btn-step-item.active {
-  border-color: var(--primary);
-  background: var(--primary);
-  color: #FFFFFF;
-  box-shadow: 0 4px 12px rgba(11, 66, 145, 0.25);
-}
-
-.step-btn-num {
-  font-size: 0.80rem;
-  font-weight: 800;
-}
-
-.step-btn-txt {
-  font-size: 0.68rem;
-  font-weight: 600;
-  opacity: 0.9;
-  white-space: nowrap;
-}
-
-.scroll-progress-line-track {
-  width: 100%;
-  height: 5px;
-  background: #E2E8F0;
-  border-radius: 3px;
-  overflow: hidden;
-  margin-top: 10px;
-}
-
-.scroll-progress-line-fill {
-  height: 100%;
-  width: 20%;
-  background: linear-gradient(90deg, #0B4291, #38BDF8);
-  transition: width 0.15s ease-out;
-}
-
-.scroll-helper-hint {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.76rem;
-  color: var(--text-muted);
-  margin-top: 8px;
-  justify-content: center;
-  font-weight: 500;
-}
-
-.scroll-helper-hint svg {
-  color: var(--primary);
-  animation: bounceDown 1.6s infinite ease-in-out;
-}
-
-@keyframes bounceDown {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(4px); }
-}
-
-@media (max-width: 991px) {
-  .tooth-scroll-track {
-    height: auto;
-  }
-  .tooth-scroll-sticky {
-    position: relative;
-    height: auto;
-    padding: 50px 0;
-  }
-  .tooth-scroll-body {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .tooth-scroll-heading {
-    font-size: 1.7rem;
-  }
-}
-
-/* ==========================================================================
    RTL (Arapça) ve Çoklu Dil Desteği (Multi-Language i18n)
    ========================================================================== */
 [dir="rtl"] {
@@ -3633,9 +3405,7 @@ img {
 [dir="rtl"] .faq-question,
 [dir="rtl"] .footer-grid,
 [dir="rtl"] .footer-bottom,
-[dir="rtl"] .footer-brand-header,
-[dir="rtl"] .step-card-top,
-[dir="rtl"] .step-card-meta {
+[dir="rtl"] .footer-brand-header {
   direction: rtl;
 }
 
@@ -3645,16 +3415,6 @@ img {
     rgba(11, 25, 44, 0.90) 42%, 
     rgba(11, 25, 44, 0.58) 72%, 
     rgba(11, 25, 44, 0.22) 100%);
-}
-
-[dir="rtl"] .step-card-active::before {
-  left: auto;
-  right: 0;
-}
-
-[dir="rtl"] .canvas-glass-badge {
-  left: auto;
-  right: 14px;
 }
 
 [dir="rtl"] .faq-question .faq-icon {

@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initTreatmentFilters();
   initReviewsFilter();
   initLanguageSwitcher();
-  initToothScrollAnimation();
 });
 
 /* ==========================================================================
@@ -302,11 +301,6 @@ const TRANSLATIONS = {
     tag_wisdom: "20'lik Diş",
     
     // 3D Diş Animasyonu
-    tooth_tag: "İnteraktif 3D Diş Mimarisi & Restorasyon Aşamaları",
-    tooth_title: "Doğal Diş Anatomisi ve <span class=\"highlight\">Adım Adım Tedavi</span>",
-    tooth_sub: "Aşağı kaydırarak dişin katmanlarını, biyolojik yapısını ve modern restorasyon sürecini inceleyin.",
-    tooth_label_focus: "Klinik Odak:",
-    tooth_label_approach: "Yaklaşımımız:",
     
     // Hekim Bölümü
     doc_tag: "Hekimimiz & Yaklaşımımız",
@@ -568,11 +562,6 @@ const TRANSLATIONS = {
     tag_wisdom: "Wisdom Tooth",
     
     // 3D Diş Animasyonu
-    tooth_tag: "Interactive 3D Tooth Architecture & Restoration Stages",
-    tooth_title: "Natural Tooth Anatomy & <span class=\"highlight\">Step-by-Step Care</span>",
-    tooth_sub: "Scroll down to explore the layers, biological architecture, and modern restorative stages of the tooth.",
-    tooth_label_focus: "Clinical Focus:",
-    tooth_label_approach: "Our Approach:",
     
     // Hekim Bölümü
     doc_tag: "Our Dentist & Philosophy",
@@ -834,11 +823,6 @@ const TRANSLATIONS = {
     tag_wisdom: "خلع ضرس العقل",
     
     // 3D Diş Animasyonu
-    tooth_tag: "هندسة الأسنان التفاعلية ثلاثية الأبعاد ومراحل الترميم",
-    tooth_title: "تشريح الأسنان الطبيعي و <span class=\"highlight\">العلاج خطوة بخطوة</span>",
-    tooth_sub: "قم بالتمرير للأسفل لاستكشاف طبقات السن الطبيعية وهندستها ومراحل الترميم التجميلي الحديث.",
-    tooth_label_focus: "التركيز السريري:",
-    tooth_label_approach: "نهجنا الطبي:",
     
     // Hekim Bölümü
     doc_tag: "طبيبنا ونهجنا الطبي",
@@ -2228,14 +2212,15 @@ function initLanguageSwitcher() {
   });
 
   // Load saved language on init
-  const savedLang = localStorage.getItem('site_lang') || 'tr';
+  let savedLang = 'tr';
+  try { savedLang = localStorage.getItem('site_lang') || 'tr'; } catch (e) { /* gizli mod / engellenmiş depolama */ }
   setLanguage(savedLang, false);
 }
 
 function setLanguage(lang, showToast = true) {
   if (!TRANSLATIONS[lang]) lang = 'tr';
   currentSiteLang = lang;
-  localStorage.setItem('site_lang', lang);
+  try { localStorage.setItem('site_lang', lang); } catch (e) { /* gizli mod / engellenmiş depolama */ }
 
   // Update HTML lang & dir
   document.documentElement.lang = lang;
@@ -2288,11 +2273,6 @@ function setLanguage(lang, showToast = true) {
 
   // Update WhatsApp links with appropriate language message
   updateWhatsAppLinks(lang);
-
-  // Sync Tooth 3D Scroll animation texts
-  if (typeof window.updateToothAnimationLanguage === 'function') {
-    window.updateToothAnimationLanguage();
-  }
 
   // Show Toast
   if (showToast) {
@@ -2353,390 +2333,5 @@ window.openWhatsApp = function(procedureName) {
 
   const encoded = encodeURIComponent(message);
   const url = `https://wa.me/${phone}?text=${encoded}`;
-  window.open(url, '_blank');
+  window.open(url, '_blank', 'noopener,noreferrer');
 };
-
-/* ==========================================================================
-   7. Apple-Style Scroll-Driven Diş Anatomisi & Restorasyon Animasyonu
-   ========================================================================== */
-function initToothScrollAnimation() {
-  const track = document.getElementById('dis-anatomisi');
-  const canvas = document.getElementById('toothCanvas');
-  if (!track || !canvas) return;
-
-  const ctx = canvas.getContext('2d');
-  const totalFrames = 300;
-  const frameImages = new Array(totalFrames + 1);
-  let currentRenderedFrame = 1;
-  let isTicking = false;
-
-  // 5 Aşamalı İçerik Bilgileri (TR / EN / AR - 5 Adımda %20 Eşit Aralıklar)
-  const STEPS_DATA_I18N = {
-    tr: [
-      {
-        step: '01 / 05',
-        percent: '%20',
-        badge: '1. Aşama • Mine & Çiğneme',
-        title: '1. Doğal Diş Mimarisi ve Anatomisi',
-        desc: 'Diş minesi ve dentin katmanlarının anatomik yapısı. Dış zırh vazifesi gören mine dokusu çiğneme kuvvetlerine karşı dişi korur.',
-        focus: 'Mine & Çiğneme Yüzeyi',
-        approach: 'Doğal Doku Analizi'
-      },
-      {
-        step: '02 / 05',
-        percent: '%40',
-        badge: '2. Aşama • Pulpa & Canlılık',
-        title: '2. Pulpa ve Sinir Kökü Koruması',
-        desc: 'Dişin canlılığını ve beslenmesini sağlayan damar-sinir demeti (pulpa). Koruyucu hekimlikte temel amaç bu dokunun sağlığını sürdürmektir.',
-        focus: 'Endodontik Canlılık',
-        approach: 'Biyolojik İzolasyon'
-      },
-      {
-        step: '03 / 05',
-        percent: '%60',
-        badge: '3. Aşama • Zirkonyum Kapak',
-        title: '3. Mikron Hassasiyetinde Kaplama',
-        desc: 'Dişin formunu ve ışık geçirgenliğini birebir taklit eden, dijital CAD/CAM ile sıfır hata toleransıyla üretilen estetik zirkonyum kaplama.',
-        focus: 'CAD/CAM Hassasiyeti',
-        approach: 'Estetik Gülüş Dizaynı'
-      },
-      {
-        step: '04 / 05',
-        percent: '%80',
-        badge: '4. Aşama • Lazer Bonding',
-        title: '4. Biyouyumlu Entegrasyon & Bonding',
-        desc: 'Gelişmiş yapıştırma teknolojisi ve biyouyumlu materyallerle restorasyonun dişe sızıntısız ve basınca dayanıklı kenar uyumuyla bağlanması.',
-        focus: 'Moleküler Bağlantı',
-        approach: 'Sıfır Kenar Sızıntısı'
-      },
-      {
-        step: '05 / 05',
-        percent: '%100',
-        badge: '5. Aşama • Tam Restorasyon',
-        title: '5. Doğal ve Kusursuz Diş Bütünlüğü',
-        desc: 'Doğal dişten ayırt edilemeyen, tam çiğneme kuvvetine ve estetik parlaklığa kavuşmuş nihai diş sağlığı restorasyonu.',
-        focus: 'Nihai Restorasyon',
-        approach: 'Ömür Boyu Konfor & Estetik'
-      }
-    ],
-    en: [
-      {
-        step: '01 / 05',
-        percent: '20%',
-        badge: 'Stage 1 • Enamel & Chewing',
-        title: '1. Natural Tooth Architecture & Anatomy',
-        desc: 'Anatomical layering of enamel and dentin. Enamel serves as a protective outer shield against daily masticatory forces.',
-        focus: 'Enamel & Occlusal Plane',
-        approach: 'Natural Tissue Analysis'
-      },
-      {
-        step: '02 / 05',
-        percent: '40%',
-        badge: 'Stage 2 • Pulp & Vitality',
-        title: '2. Pulp & Root Nerve Protection',
-        desc: 'The neurovascular bundle (pulp) providing vitality and nutrition. Preserving this vital core is the cornerstone of preventive dentistry.',
-        focus: 'Endodontic Vitality',
-        approach: 'Biological Isolation'
-      },
-      {
-        step: '03 / 05',
-        percent: '60%',
-        badge: 'Stage 3 • Zirconia Crown',
-        title: '3. Micron-Precision Aesthetic Crown',
-        desc: 'High-translucency zirconia crown crafted with digital CAD/CAM technology, matching the exact hue and light dynamics of natural enamel.',
-        focus: 'CAD/CAM Precision',
-        approach: 'Aesthetic Smile Design'
-      },
-      {
-        step: '04 / 05',
-        percent: '80%',
-        badge: 'Stage 4 • Laser Bonding',
-        title: '4. Biocompatible Integration & Bonding',
-        desc: 'Seamless, pressure-resistant adhesive bonding with biocompatible resin matrices, ensuring zero micro-leakage and long-term durability.',
-        focus: 'Molecular Adhesion',
-        approach: 'Zero Marginal Leakage'
-      },
-      {
-        step: '05 / 05',
-        percent: '100%',
-        badge: 'Stage 5 • Full Restoration',
-        title: '5. Flawless Natural Tooth Integrity',
-        desc: 'A complete clinical and aesthetic restoration indistinguishable from natural dentition, offering lifelong comfort and full chewing function.',
-        focus: 'Final Restoration',
-        approach: 'Lifelong Comfort & Beauty'
-      }
-    ],
-    ar: [
-      {
-        step: '01 / 05',
-        percent: '20%',
-        badge: 'المرحلة 1 • المينا والمضغ',
-        title: '1. البنية الطبيعية وتشريح السن',
-        desc: 'التمايز التشريحي لطبقات المينا والعاج. يعمل نسيج المينا كدرع واقٍ يحمي السن من قوى وضغوط المضغ اليومية.',
-        focus: 'طبقة المينا وسطح المضغ',
-        approach: 'تحليل الأنسجة الطبيعية'
-      },
-      {
-        step: '02 / 05',
-        percent: '40%',
-        badge: 'المرحلة 2 • اللب والحيوية',
-        title: '2. حماية اللب والعصب الجذري',
-        desc: 'الحزمة الوعائية العصبية (لب السن) المسؤولة عن تغذية وحيوية السن. الحفاظ على هذه الأنسجة هو جوهر طب الأسنان الوقائي.',
-        focus: 'الحيوية اللبية والوقاية',
-        approach: 'العزل الحيوي المعقم'
-      },
-      {
-        step: '03 / 05',
-        percent: '60%',
-        badge: 'المرحلة 3 • تاج الزيركون',
-        title: '3. تاج زيركون بدقة الميكرون',
-        desc: 'تاج زيركون عالي الشفافية ومطابق تماماً للمينا الطبيعية، مصمم ومصنّع رقمياً بواسطة CAD/CAM بدون أدنى هامش خطأ.',
-        focus: 'دقة CAD/CAM الرقمية',
-        approach: 'تصميم الابتسامة التجميلية'
-      },
-      {
-        step: '04 / 05',
-        percent: '80%',
-        badge: 'المرحلة 4 • الربط بالليزر',
-        title: '4. الترابط والتكامل الحيوي المتقن',
-        desc: 'تثبيت التاج بتقنيات لصق متطورة ومواد متوافقة حيوياً تضمن إغلاقاً حفافياً محكماً ومقاوماً للضغط دون أي تسريب مجهري.',
-        focus: 'الترابط الجزيئي المحكم',
-        approach: 'انعدام التسرب الحفافي'
-      },
-      {
-        step: '05 / 05',
-        percent: '100%',
-        badge: 'المرحلة 5 • ترميم كامل',
-        title: '5. تكامل السن الطبيعي والمثالي',
-        desc: 'ترميم نهائي متكامل لا يمكن تمييزه عن السن الطبيعي، يعيد القوة الكاملة للمضغ والبريق التجميلي الدائم لمدى الحياة.',
-        focus: 'الترميم النهائي الشامل',
-        approach: 'راحة وجمال يدومان مدى الحياة'
-      }
-    ]
-  };
-
-  let currentScrollProgress = 0;
-
-  // UI Elementleri
-  const progressFill = document.getElementById('scrollProgressFill');
-  const canvasBadgeText = document.getElementById('canvasProgressText');
-  const canvasFrameText = document.getElementById('canvasFrameText');
-  const stepPillNumber = document.getElementById('stepPillNumber');
-  const stepPillPercent = document.getElementById('stepPillPercent');
-  const stepCardTitle = document.getElementById('stepCardTitle');
-  const stepCardDesc = document.getElementById('stepCardDesc');
-  const stepMetaFocus = document.getElementById('stepMetaFocus');
-  const stepMetaApproach = document.getElementById('stepMetaApproach');
-  const stepButtons = document.querySelectorAll('.btn-step-item');
-
-  function getFramePath(index) {
-    const num = String(index).padStart(3, '0');
-    return `images/dis-animasyon/ezgif-frame-${num}.jpg`;
-  }
-
-  // İlk kareyi derhal yükle ve çiz
-  const firstImg = new Image();
-  firstImg.src = getFramePath(1);
-  firstImg.onload = () => {
-    frameImages[1] = firstImg;
-    renderFrame(1);
-  };
-
-  // Arka planda kademeli ön yükleme (Önce ana adımlar, sonra tamamı)
-  function preloadImages() {
-    const keyFrames = [1, 60, 120, 180, 240, 300];
-    keyFrames.forEach(i => {
-      if (!frameImages[i]) {
-        const img = new Image();
-        img.src = getFramePath(i);
-        img.onload = () => { frameImages[i] = img; };
-      }
-    });
-
-    let idx = 2;
-    function loadNextBatch() {
-      const batchSize = 8;
-      for (let b = 0; b < batchSize && idx <= totalFrames; b++, idx++) {
-        if (!frameImages[idx]) {
-          const img = new Image();
-          img.src = getFramePath(idx);
-          img.onload = () => { frameImages[idx] = img; };
-        }
-      }
-      if (idx <= totalFrames) {
-        if ('requestIdleCallback' in window) {
-          requestIdleCallback(loadNextBatch);
-        } else {
-          setTimeout(loadNextBatch, 40);
-        }
-      }
-    }
-    setTimeout(loadNextBatch, 80);
-  }
-  preloadImages();
-
-  function renderFrame(frameNum) {
-    frameNum = Math.max(1, Math.min(totalFrames, Math.round(frameNum)));
-    let img = frameImages[frameNum];
-
-    // En yakın yüklü kareye sığın
-    if (!img || !img.complete) {
-      for (let offset = 1; offset <= 25; offset++) {
-        if (frameImages[frameNum - offset] && frameImages[frameNum - offset].complete) {
-          img = frameImages[frameNum - offset];
-          break;
-        }
-        if (frameImages[frameNum + offset] && frameImages[frameNum + offset].complete) {
-          img = frameImages[frameNum + offset];
-          break;
-        }
-      }
-    }
-
-    if (img && img.complete) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-      currentRenderedFrame = frameNum;
-    } else {
-      const loadImg = new Image();
-      loadImg.src = getFramePath(frameNum);
-      loadImg.onload = () => {
-        frameImages[frameNum] = loadImg;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(loadImg, 0, 0, canvas.width, canvas.height);
-        currentRenderedFrame = frameNum;
-      };
-    }
-  }
-
-  function updateUI(progress) {
-    currentScrollProgress = progress;
-    const frame = Math.min(totalFrames, Math.max(1, Math.round(progress * (totalFrames - 1)) + 1));
-    renderFrame(frame);
-
-    // Aktif Adım Belirleme (1'den 5'e, her biri %20)
-    let stepIndex = Math.min(4, Math.floor(progress * 5));
-    if (progress >= 0.96) stepIndex = 4;
-    
-    const activeLang = currentSiteLang || 'tr';
-    const stepsList = STEPS_DATA_I18N[activeLang] || STEPS_DATA_I18N.tr;
-    const data = stepsList[stepIndex];
-
-    const percentInt = Math.max(5, Math.round(progress * 100));
-    const percentStr = (activeLang === 'tr') ? `%${percentInt}` : `${percentInt}%`;
-
-    if (progressFill) progressFill.style.width = percentInt + '%';
-    if (canvasBadgeText) canvasBadgeText.textContent = percentStr + ' • ' + data.badge;
-    if (canvasFrameText) canvasFrameText.textContent = `Kare: ${frame} / ${totalFrames}`;
-
-    if (stepPillNumber) stepPillNumber.textContent = data.step;
-    if (stepPillPercent) stepPillPercent.textContent = percentStr;
-    if (stepCardTitle) stepCardTitle.textContent = data.title;
-    if (stepCardDesc) stepCardDesc.textContent = data.desc;
-    if (stepMetaFocus) stepMetaFocus.textContent = data.focus;
-    if (stepMetaApproach) stepMetaApproach.textContent = data.approach;
-
-    stepButtons.forEach((btn, idx) => {
-      if (idx === stepIndex) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
-  }
-
-  // Dışarıdan dil değiştiğinde animasyon kartlarını güncelleme fonksiyonu
-  window.updateToothAnimationLanguage = function() {
-    updateUI(currentScrollProgress);
-  };
-
-  // Scroll Olayı Dinleyicisi (Masaüstü ve Mobil Uyumlu)
-  function onScroll() {
-    const rect = track.getBoundingClientRect();
-    const trackHeight = track.offsetHeight - window.innerHeight;
-    let progress = 0;
-
-    if (trackHeight > 0) {
-      const scrolled = -rect.top;
-      progress = Math.max(0, Math.min(1, scrolled / trackHeight));
-    } else {
-      // Mobilde auto-height durumu için viewport kaydırma pozisyonuna göre hesapla
-      const windowH = window.innerHeight || document.documentElement.clientHeight;
-      const totalDist = windowH + (rect.height || 400);
-      const currentDist = windowH - rect.top;
-      progress = Math.max(0, Math.min(1, currentDist / totalDist));
-    }
-
-    if (!isTicking) {
-      window.requestAnimationFrame(() => {
-        updateUI(progress);
-        isTicking = false;
-      });
-      isTicking = true;
-    }
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // Butonlara Tıklama (Doğrudan ilgili adıma anında geçiş & masaüstünde pürüzsüz kaydırma)
-  stepButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const step = parseInt(btn.getAttribute('data-step'), 10);
-      const targetRatio = (step - 1) / 4;
-      
-      // Mobilde ve tıklamalarda anında UI ve canvas güncelle
-      updateUI(targetRatio);
-
-      const trackHeight = track.offsetHeight - window.innerHeight;
-      if (trackHeight > 0) {
-        const trackTop = track.getBoundingClientRect().top + window.scrollY;
-        const targetScroll = trackTop + (targetRatio * trackHeight);
-
-        window.scrollTo({
-          top: targetScroll,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-
-  // Mouse Wheel ile Her Scroll'da %20 İlerletme (5 Scroll'da Tamamlanma)
-  let wheelTimeout = null;
-  const stickyContainer = track.querySelector('.tooth-scroll-sticky');
-  
-  if (stickyContainer) {
-    stickyContainer.addEventListener('wheel', (e) => {
-      const rect = track.getBoundingClientRect();
-      const trackHeight = track.offsetHeight - window.innerHeight;
-      
-      // Sadece ekranın içine kilitlendiğinde adım desteği ver
-      if (rect.top <= 2 && rect.bottom >= window.innerHeight - 2) {
-        const scrolled = -rect.top;
-        const currentProgress = Math.max(0, Math.min(1, scrolled / trackHeight));
-        
-        // En baştaysa ve yukarı kaydırıyorsa veya en sondaysa ve aşağı kaydırıyorsa doğal akışa devret
-        if ((currentProgress <= 0.02 && e.deltaY < 0) || (currentProgress >= 0.98 && e.deltaY > 0)) {
-          return;
-        }
-
-        e.preventDefault();
-        if (wheelTimeout) return;
-        wheelTimeout = setTimeout(() => { wheelTimeout = null; }, 260);
-
-        // Her scroll %20 hareket etsin (5 adımda tamamlanma mantığı)
-        const stepDelta = e.deltaY > 0 ? 0.20 : -0.20;
-        const newProgress = Math.max(0, Math.min(1, Math.round((currentProgress + stepDelta) * 5) / 5));
-        
-        const trackTop = track.getBoundingClientRect().top + window.scrollY;
-        const targetScroll = trackTop + (newProgress * trackHeight);
-        
-        window.scrollTo({
-          top: targetScroll,
-          behavior: 'smooth'
-        });
-      }
-    }, { passive: false });
-  }
-}
-
